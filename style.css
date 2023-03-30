@@ -8,6 +8,10 @@ h3 {
 img {
     width: 38%;
 }
+#back {
+    color: white;
+    background-color: rgb(7, 171, 105);
+}
 body {
     background-color: #faf9ec;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
