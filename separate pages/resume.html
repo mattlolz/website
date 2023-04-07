@@ -4,24 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../style2.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Resume</title>
 </head>
-<body>
-    <nav>
-        <ul>
-            <li><a href="../index.html">Home page</a></li>
-            <li><a href="../nav_bar.html">Second page</a></li>
-            <li style="float: right;"><a href="hobby.html">Hobby</a></li>
-            <li style="float: right;"><a href="program.html">Programs</a></li>
-            <li style="float: right;"><a href="resume.html">Resume</a></li>
-        </ul>
-    </nav><br>
-    <h1>Matt Green</h1>
-    <p>Email: <a href="mailto:mattreygreen@gmail.com">mattreygreen@gmail.com</a></p>
-    <p>Phone: 512-621-4253</p>
+<body style="background-color: ivory;">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../index.html">Home</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../second.html">Second page</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Dropdown</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="resume.html">Resume</a></li>
+                  <li><a class="dropdown-item" href="program.html">Programs</a></li>
+                  <li><a class="dropdown-item" href="hobby.html">Hobbies</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <h1 style="text-align:center;">Matt Green</h1><hr>
+    <p style="text-align: center;">Email: <a href="mailto:mattreygreen@gmail.com">mattreygreen@gmail.com</a></p>
+    <p style="text-align: center;">Phone: 512-621-4253</p>
 
-    <ul>
+    <ul style="margin-left:40px;">
         <li>Experience:</li>
         <ul>
             <li>Web Design Class</li>
@@ -34,12 +49,16 @@
             <li>Menchaca Elementary</li>
             <li>Zilker Elementary</li>
             <li>O Henry Middle School</li>
-            <li>Austin High School; Academy of Design and Technology</li>
+            <li>Austin High School; Academy of Design and Technology (201X-2023)</li>
+            <ul>
+                <li></li>
+            </ul>
         </ul>
         <li>Skills:</li>
         <ul>
             <li>Python</li>
             <ul>
+                <li>Pygame</li>
                 <li>Tkinter</li>
                 <li>Turtle</li>
                 <li>Matplotlib</li>
