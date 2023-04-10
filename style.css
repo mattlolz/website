@@ -2,3 +2,6 @@ body{
     background-color:ivory;
     text-align: center;
 }
+.adjust-padding {
+    padding-top: 5px;
+}
