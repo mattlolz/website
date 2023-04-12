@@ -1,0 +1,13 @@
+div button i a {
+    text-decoration: none;
+}
+div.bottom button {
+    background-color:ivory;
+    border-width:0;
+}
+div.bottom {
+    position: absolute;
+    left:0;
+    right:0;
+    bottom:0;
+}
