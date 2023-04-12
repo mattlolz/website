@@ -2,6 +2,12 @@ body{
     background-color:ivory;
     text-align: center;
 }
+a:hover {
+    background-color: rgb(32, 31, 31);
+}
 .adjust-padding {
     padding-top: 5px;
+}
+button i a:hover {
+    background-color:ivory;
 }
