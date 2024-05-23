@@ -1,7 +1,3 @@
-## Matt G's CS Website 2 ##
+## Matt G's CS Website ##
 - - - -
-Included pages:
-* index.html
-* resume.html
-* program.html
-* hobby.html
+* Project for Digital Media

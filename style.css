@@ -1,5 +1,6 @@
 body{
-    background-color:ivory;
+    /* snow, whitesmoke */
+    background-color: whitesmoke;
     text-align: center;
 }
 a:hover {
@@ -8,6 +9,34 @@ a:hover {
 .adjust-padding {
     padding-top: 5px;
 }
-button i a:hover {
+/* button i a:hover {
     background-color:ivory;
+} */
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.image-container img {
+display: block;
+width: 2240px;
+height: 1065px;
+}
+
+.overlay-text {
+position: absolute;
+top: 50%; 
+left: 50%; 
+transform: translate(-50%, -50%);
+color: #fff;
+font-size: 50px; 
+text-align: center;
+}
+.heading-text {
+    padding-top: 200px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 45px;
+}
+.body-text {
+    font-size: 20px;
 }

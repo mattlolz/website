@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-light navbar-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">Home</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapsibleNavbar" style="padding-left:89%;">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Dropdown</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="../separate pages/resume.html">Resume</a></li>
+                  <li><a class="dropdown-item" href="../separate pages/program.html">Programs</a></li>
+                  <li><a class="dropdown-item" href="../separate pages/hobby.html">Hobbies</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <code>
+<pre>
+    using System.Collections; <br>
+    using System.Collections.Generic;<br>
+    using UnityEngine;<br><br>
+    
+    public class PlayerMove : MonoBehaviour<br>
+    {<br>
+        float moveSpeed, gravityForce, jumpForce;<br>
+        public CharacterController characterController;<br>
+        private Vector3 moveInput;<br>
+        public Transform cameraTransform;<br>
+    
+        public float mouseSensitivity;<br>
+    
+        private bool canJump;<br>
+        public Transform groundCheckPoint;<br>
+        public LayerMask ground; <br>
+    
+        // Start is called before the first frame update<br>
+        void Start()<br>
+        {<br>
+            Debug.Log("Started");<br>
+        }<br>
+    
+        // Update is called once per frame<br>
+        void Update()<br>
+        {<br>
+            float yVelocity = moveInput.y;<br>
+            Vector3 verticalMove = transform.forward * Input.GetAxis("Vertical");<br>
+            Vector3 horiztonalMove = transform.right * Input.GetAxis("Horizontal");<br>
+    
+            moveInput = horiztonalMove + verticalMove;<br>
+            moveInput.Normalize();<br>
+    
+
+            moveInput = moveInput * moveSpeed;<br>
+    
+            moveInput.y = yVelocity;<br>
+            moveInput.y += Physics.gravity.y * gravityForce * Time.deltaTime;<br>
+            if (characterController.isGrounded)<br>
+            {<br>
+                moveInput.y = Physics.gravity.y * gravityForce * Time.deltaTime ;<br>
+            }<br>
+    
+            canJump = Physics.OverlapSphere(groundCheckPoint.position, 0.2f, ground).Length > 0;<br>
+    
+            if (canJump)<br>
+            {<br>
+                Debug.Log("can jump");<br>
+            }<br>
+            if (Input.GetKeyDown(KeyCode.Space) && canJump)<br>
+            {<br>
+                moveInput.y = jumpForce; <br>
+            }<br>
+    
+            characterController.Move(moveInput * Time.deltaTime);<br>
+    
+            Vector2 mouseInput = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y")) * mouseSensitivity;<br>
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y + mouseInput.x, transform.rotation.eulerAngles.z);<br>
+            
+            cameraTransform.rotation = Quaternion.Euler(cameraTransform.rotation.eulerAngles + new Vector3(-mouseInput.y, 0f, 0f));<br>
+        }<br>
+    }<br>
+</pre>
+    <nav aria-label="..." style="margin-left:40%;">
+        <ul class="pagination">
+        <li class="page-item">
+            <a class="page-link" href="code1_submit.html">Previous</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="code1_submit.html">1</a></li>
+        <li class="page-item active">
+            <span class="page-link">
+            2
+            <span class="sr-only">(current)</span>
+            </span>
+        </li>
+        </ul>
+    </nav>
+    </code>
+</body>
+</html>
